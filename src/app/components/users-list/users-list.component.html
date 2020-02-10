@@ -1,0 +1,47 @@
+<section>
+  <div class="users-actions">
+
+    <button (click)='loadData()' class="btn btn-list">
+      <span>LIST</span>
+    </button>
+
+    <button (click)='clearData()' class="btn btn-clear">
+      <span>CLEAR</span>
+    </button>
+
+  </div>
+</section>
+
+<div class="col-lg-12">
+  <div class="main-box no-header clearfix">
+    <div class="main-box-body clearfix">
+      <div class="table-responsive">
+        <table class="table user-list">
+          <thead>
+            <tr>
+              <th><span>Author Name </span></th>
+              <th><span>Data</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+              <td>
+                <span class="user-subhead">{{ user.author}}</span>
+              </td>
+              <td>
+                <ul>
+                  <li *ngFor="let item of user.sold">
+                    {{item.year}}
+                    {{item.country}}
+                    
+                  </li>
+                </ul>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
